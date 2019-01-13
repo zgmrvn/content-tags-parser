@@ -1,0 +1,8 @@
+<h2><%= @article.title %></h2>
+<div class="text-justify mb-3">
+  <%= sanitize(@article.content, tags: ContentTagsService::Allowed_tags, attributes: ContentTagsService::Allowed_attributes) %>
+</div>
+
+<div class="text-center" role="group">
+  <%= link_to 'Edit', edit_article_path(@article), class: ['btn', 'btn-primary'] %>
+</div>

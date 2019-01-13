@@ -1,0 +1,29 @@
+<%= link_to 'New content tag', new_content_tag_path, class: ['btn', 'btn-primary', 'mb-3'] %>
+
+<table class="table">
+  <col width="0">
+  <col width="15%">
+  <col width="25%">
+  <col width="60%">
+  <col width="0">
+
+  <tr>
+    <th></th>
+    <th class="text-center">ID</th>
+    <th>Tag</th>
+    <th>HTML</th>
+    <th></th>
+  </tr>
+
+  <% @content_tags.each do |ct| %>
+    <tr>
+      <td class="text-nowrap"><div class="content-tag-color align-middle" style="background-color: #<%= ct.color %>;"></div></td>
+      <td class="text-center"><%= ct.id %></td>
+      <td><%= ct.tag %></td>
+      <td><%= ct.html %></td>
+      <td class="text-nowrap">     
+        <%= link_to 'edit', edit_content_tag_path(ct), class: ['btn' ,'btn-sm', 'btn-primary'] %>
+      </td>
+    </tr>
+  <% end %>
+</table>

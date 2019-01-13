@@ -1,0 +1,24 @@
+<%= form_with model: @content_tag, local: true, class: ['form-group'] do |form| %>
+  <% if @content_tag.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@content_tag.errors.count, 'error') %> prohibited this
+        content tag from being saved:
+      </h2>
+      <ul>
+        <% @content_tag.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= form.text_field :tag, placeholder: 'Tag', class: ['form-control mb-2'] %>
+  <%= form.text_field :html, placeholder: 'HTML balise', class: ['form-control mb-2'] %>
+  <%= form.text_field :color, placeholder: '000000', class: ['form-control mb-3'] %>
+
+  <div class="text-center" role="group">
+    <%= link_to 'Cancel', { action: :index }, { class: ['btn', 'btn-primary'] } %>
+    <%= form.submit class: ['btn', 'btn-success'] %>
+  </div>
+<% end %>

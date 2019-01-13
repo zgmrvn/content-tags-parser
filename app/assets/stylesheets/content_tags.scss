@@ -1,0 +1,22 @@
+// Place all the styles related to the ContentTags controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+$height: 1.5rem;
+
+.content-tag-color {
+    display: inline-block;
+    width: $height;
+    height: $height;
+    border-radius: $height / 2;
+}
+
+.quote {
+    color: purple;
+    background-color: #ccc;
+}
+
+.quote-dark {
+    color: #888;
+    background-color: #222;
+}

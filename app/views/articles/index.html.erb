@@ -1,0 +1,22 @@
+<%= link_to 'New article', new_article_path, class: ['btn', 'btn-primary', 'mb-3'] %>
+
+<table class="table">
+  <col width="100%">
+  <col width="0">
+
+  <tr>
+    <th>Title</th>
+    <th></th>
+  </tr>
+
+  <% @articles.each do |article| %>
+    <tr>
+      <td><%= article.title.first(40) %>...</td>
+      <td class="text-nowrap">
+        <%= link_to 'show', article_path(article), class: ['btn', 'btn-sm', 'btn-primary'] %>
+        <%= link_to 'edit', edit_article_path(article), class: ['btn' ,'btn-sm', 'btn-primary'] %>
+        <%= link_to 'delete', article_path(article), class: ['btn' ,'btn-sm', 'btn-danger'] %>
+      </td>
+    </tr>
+  <% end %>
+</table>

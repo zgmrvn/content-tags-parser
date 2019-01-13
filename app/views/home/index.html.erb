@@ -1,0 +1,4 @@
+<h2><%= @article.title %></h2>
+<div class="text-justify">
+  <%= sanitize(@article.content, tags: ContentTagsService::Allowed_tags, attributes: ContentTagsService::Allowed_attributes) %>
+</div>
