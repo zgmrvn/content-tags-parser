@@ -16,7 +16,7 @@ class ContentTagsController < ApplicationController
     @content_tag = ContentTag.new(content_tag_params)
 
     if @content_tag.save
-      redirect_to @content_tag
+      redirect_to action: 'index'
     else
       render 'new'
     end
