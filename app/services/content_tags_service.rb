@@ -25,8 +25,6 @@ class ContentTagsService
     text
   end
 
-  private
-
   def get_closing_tags(opening_tags)
     # handle hrefs first
     # todo

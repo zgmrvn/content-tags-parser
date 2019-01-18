@@ -4,7 +4,8 @@
   <col width="0">
   <col width="15%">
   <col width="25%">
-  <col width="60%">
+  <col width="40%">
+  <col width="20%">
   <col width="0">
 
   <tr>
@@ -12,6 +13,7 @@
     <th class="text-center">ID</th>
     <th>Tag</th>
     <th>HTML</th>
+    <th>Preview</th>
     <th></th>
   </tr>
 
@@ -21,6 +23,7 @@
       <td class="text-center"><%= ct.id %></td>
       <td><%= ct.tag %></td>
       <td><%= ct.html %></td>
+      <td><%= sanitize(ct.preview, tags: ContentTagsService::Allowed_tags, attributes: ContentTagsService::Allowed_attributes) %></td>
       <td class="text-nowrap">     
         <%= link_to 'edit', edit_content_tag_path(ct), class: ['btn' ,'btn-sm', 'btn-primary'] %>
       </td>
