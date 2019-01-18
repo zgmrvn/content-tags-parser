@@ -1,6 +1,6 @@
 class ContentTagsController < ApplicationController
   def index
-    @content_tags = ContentTag.all
+    @content_tags = ContentTag.order(:created_at)
   end
 
   def new
